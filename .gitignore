@@ -1,0 +1,7 @@
+/nbactions.xml
+/.idea
+/*.iml
+
+/target/
+
+*~

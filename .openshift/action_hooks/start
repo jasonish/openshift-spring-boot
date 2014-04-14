@@ -1,0 +1,12 @@
+#! /bin/bash
+
+set -x
+
+jar=$(ls ${OPENSHIFT_REPO_DIR}/target/*.jar | head -n1)
+
+nohup java -server \
+     -Dserver.address=${OPENSHIFT_DIY_IP} \
+     -Dserver.port=${OPENSHIFT_DIY_PORT} \
+     -Dlogging.path=${OPENSHIFT_LOG_DIR} \
+     -jar ${jar} &
+
